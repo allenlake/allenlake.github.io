@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="C:\Users\saber\Desktop\api\jquery-3.3.1.js"></script>
+<style type="text/css">
+	div{
+		width: 300px;
+		height: 170px;
+		border: solid 2px #000000;
+		font-size: 120px;
+		color: white;
+		text-align: center;
+		/*margin-top: auto;*/
+		/*margin-right: auto;*/
+		overflow: hidden;
+		position: relative;
+
+	}
+	#div_1{
+		background-color: #FF9E9E;
+		float: left;
+
+	}
+	#div_2{
+		background-color: #68E1FE;
+		float: left;
+	}
+	#div_3{
+		background-color: #FF4DE0;
+	}
+	button{
+		width: 150px;
+		height: 87px;
+		background-color: #FF2222;
+		font-size: 20px;
+		color: white;
+	}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		$("document").ready(function(){
+			$("#b_1").click(function(){
+				$("#div_1").toggle(2000);
+			});
+			$("#b_2").click(function(){
+				$("#div_2").fadeToggle("slow");
+				$("#div_3").fadeTo("slow",0.2);
+			});
+			$("#b_3").click(function(){
+				$("h1").slideToggle(2000);
+			});
+			$("#b_4").click(function(){
+				var div_1=$("#div_1");
+				var div_2=$("#div_2");
+				var div_3=$("#div_3");
+				div_1.animate({top:'400px'});
+				div_1.animate({left:'400px'});
+				div_1.animate({top:'0px'});
+				div_1.animate({left:'0px'});
+				div_2.animate({top:'400px'});
+				div_2.animate({left:'400px'});
+				div_2.animate({top:'0px'});
+				div_2.animate({left:'0px'});
+				div_3.animate({top:'400px'});
+				div_3.animate({left:'400px'});
+				div_3.animate({top:'0px'});
+				div_3.animate({left:'0px'});
+			});
+			$("#b_5").click(function(){
+				$("#div_1").stop(true,false);
+			});
+			$("#b_6").click(function(){
+				$("#div_3").css("background-color","#000000","3000").animate({left:'200px'}).text("④");
+				// $("#div_3");
+			})
+			$("#b_7").click(function(){
+				$("#div_3").after("<div>④</div>");
+			});
+			$("#b_8").click(function(){
+				$("#div_3").remove();
+			});
+		});
+	</script>
+    <h1><b>Jquery Test<b></h1><hr>
+    <div id="div_1">①</div>
+    <div id="div_2">②</div>
+    <div id="div_3">③</div><hr>
+    <button id="b_1">隐藏显示</button>
+    <button id="b_2">淡入淡出</button>
+    <button id="b_3">滑动</button>
+    <button id="b_4">动画</button>
+    <button id="b_5">停止动画</button>
+    <button id="b_6">链接动画</button>
+    <button id="b_7">添加div</button>
+    <button id="b_8">删除div</button>
+</body>
+</html>
